@@ -1,0 +1,33 @@
+﻿@model List<Phone>
+
+@{
+    ViewBag.Title = "Phones";
+    Layout = "_Layout";
+}
+
+<h2>Phones</h2>
+<a asp-action="Add">Add Phone</a>
+
+<div class="table-section">
+@if (!Model.Any())
+{
+    <p>No phones available</p>
+}
+else
+{
+    <table>
+        <tr>
+            <th>Id</th><th>Name</th><th>Company</th><th>Price</th>
+        </tr>
+        @foreach(var phone in Model)
+        {
+            <tr>
+                <td>@phone.Id</td>
+                <td>@phone.Name</td>
+                <td>@phone.Company</td>
+                <td>@phone.Price</td>
+            </tr>
+        }
+    </table>
+}
+</div>
