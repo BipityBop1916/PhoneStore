@@ -21,6 +21,20 @@ public class PhonesController : Controller
     {
         return View();
     }
+    
+    public IActionResult DownloadFile(string phoneName)
+    {
+        if (string.IsNullOrEmpty(phoneName))
+            return NotFound();
+
+        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "PhoneFiles", phoneName + ".txt");
+
+        if (!System.IO.File.Exists(filePath))
+            return NotFound();
+
+        return PhysicalFile(filePath, "text/plain", phoneName + ".txt");
+    }
+
 
     [HttpPost]
     public IActionResult Add(Phone phone)

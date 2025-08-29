@@ -1,0 +1,4 @@
+﻿Xiaomi 15 Ultra
+Brand: Xiaomi
+Price: 1499
+Display: 6.73"

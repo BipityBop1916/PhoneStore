@@ -1,0 +1,4 @@
+﻿OnePlus 13
+Brand: OnePlus
+Price: 899
+Display: 6.82"

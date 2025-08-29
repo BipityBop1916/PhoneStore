@@ -1,0 +1,4 @@
+﻿Galaxy S24
+Brand: Samsung
+Price: 1299
+Display: 6.8"

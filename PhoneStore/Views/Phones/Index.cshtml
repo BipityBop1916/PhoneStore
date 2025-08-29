@@ -8,6 +8,7 @@
 <h2>Phones</h2>
 <a asp-action="Add">Add Phone</a>
 
+
 <div class="table-section">
 @if (!Model.Any())
 {
@@ -26,6 +27,9 @@ else
                 <td>@phone.Name</td>
                 <td>@phone.Company</td>
                 <td>@phone.Price</td>
+                <td>
+                    <a asp-action="DownloadFile" asp-controller="Phones" asp-route-phoneName="@phone.Name">Download Info</a>
+                </td>
             </tr>
         }
     </table>

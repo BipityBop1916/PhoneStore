@@ -1,0 +1,4 @@
+﻿iPhone 16
+Brand: Apple
+Price: 799
+Display: 6.1"

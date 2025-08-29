@@ -1,0 +1,4 @@
+﻿Motorola Edge 2025
+Brand: Motorola
+Price: 549
+Display: 6.7"
