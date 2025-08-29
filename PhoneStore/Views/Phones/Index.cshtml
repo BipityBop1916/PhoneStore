@@ -33,6 +33,10 @@ else
                 <td>
                     <a asp-action="RedirectToManufacturer" asp-controller="Phones" asp-route-url="@phone.ManufacturerUrl">Visit Site</a>
                 </td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Phones" asp-route-id="@phone.Id">Edit</a>
+                </td>
+
             </tr>
         }
     </table>

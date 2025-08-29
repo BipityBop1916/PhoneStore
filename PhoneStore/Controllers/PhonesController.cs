@@ -42,9 +42,7 @@ public class PhonesController : Controller
 
         return Redirect(url);
     }
-
-
-
+    
     [HttpPost]
     public IActionResult Add(Phone phone)
     {
@@ -53,6 +51,25 @@ public class PhonesController : Controller
             _db.Phones.Add(phone);
             _db.SaveChanges();
         }
+        return RedirectToAction("Index");
+    }
+    
+    [HttpGet]
+    public IActionResult Edit(int id)
+    {
+        Phone phone = _db.Phones.FirstOrDefault(p => p.Id == id);
+        if (phone == null) return NotFound();
+        return View(phone);
+    }
+    
+    [HttpPost]
+    public IActionResult Edit(Phone phone)
+    {
+        if (!ModelState.IsValid)
+            return View(phone);
+
+        _db.Phones.Update(phone);
+        _db.SaveChanges();
         return RedirectToAction("Index");
     }
 }
