@@ -1,0 +1,34 @@
+﻿@model Order
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Order a phone</h2>
+
+<form asp-action="Create" asp-controller="Orders" method="post">
+    <input type="hidden" asp-for="PhoneId" value="@Model.Phone.Id" />
+
+    <div>
+        <label>Name:</label>
+        <input asp-for="CustomerName" />
+    </div>
+
+    <div>
+        <label>Address:</label>
+        <input asp-for="Address" />
+    </div>
+
+    <div>
+        <label>Contact Phone:</label>
+        <input asp-for="ContactPhone" />
+    </div>
+
+    <div>
+        <label>Phone:</label>
+        <input type="text" disabled value="@Model.Phone.Name" />
+    </div>
+
+    <button type="submit">Submit Order</button>
+</form>

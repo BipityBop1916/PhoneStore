@@ -36,6 +36,9 @@ else
                 <td>
                     <a asp-action="Edit" asp-controller="Phones" asp-route-id="@phone.Id">Edit</a>
                 </td>
+                <td>
+                    <a asp-action="Create" asp-controller="Orders" asp-route-phoneId="@phone.Id">Order</a>
+                </td>
 
             </tr>
         }
