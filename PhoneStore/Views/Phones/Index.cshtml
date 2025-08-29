@@ -30,6 +30,9 @@ else
                 <td>
                     <a asp-action="DownloadFile" asp-controller="Phones" asp-route-phoneName="@phone.Name">Download Info</a>
                 </td>
+                <td>
+                    <a asp-action="RedirectToManufacturer" asp-controller="Phones" asp-route-url="@phone.ManufacturerUrl">Visit Site</a>
+                </td>
             </tr>
         }
     </table>

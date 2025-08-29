@@ -34,6 +34,15 @@ public class PhonesController : Controller
 
         return PhysicalFile(filePath, "text/plain", phoneName + ".txt");
     }
+    
+    public IActionResult RedirectToManufacturer(string url)
+    {
+        if (string.IsNullOrEmpty(url))
+            return NotFound();
+
+        return Redirect(url);
+    }
+
 
 
     [HttpPost]
