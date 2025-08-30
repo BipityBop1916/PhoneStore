@@ -14,3 +14,10 @@
 {
     <img src="@Model.PhotoUrl" alt="@Model.Name" style="max-width:300px;" />
 }
+<h3>Price in other currencies:</h3>
+<ul>
+    @foreach(var cur in ViewBag.Currencies as List<Currency>)
+    {
+        <li>@cur.CurrencyName (@cur.CurrencyCode): @(Model.Price * (decimal)cur.CurrencyRate)</li>
+    }
+</ul>

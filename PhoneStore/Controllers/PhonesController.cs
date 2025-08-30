@@ -1,6 +1,7 @@
 ﻿namespace PhoneStore.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using PhoneStore.Models;
+using System.Text.Json;
 
 public class PhonesController : Controller
 {
@@ -104,6 +105,19 @@ public class PhonesController : Controller
 
         var phone = _db.Phones.FirstOrDefault(p => p.Id == id);
         if (phone == null) return NotFound();
+        
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "data", "currencies.json");
+        
+        if (System.IO.File.Exists(path))
+        {
+            var jsonData = System.IO.File.ReadAllText(path);
+            var currencies = JsonSerializer.Deserialize<List<Currency>>(jsonData);
+            ViewBag.Currencies = currencies;
+        }
+        else
+        {
+            ViewBag.Currencies = new List<Currency>(); // fallback
+        }
 
         return View(phone);
     }
