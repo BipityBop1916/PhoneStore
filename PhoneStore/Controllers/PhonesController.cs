@@ -72,4 +72,29 @@ public class PhonesController : Controller
         _db.SaveChanges();
         return RedirectToAction("Index");
     }
+    public IActionResult Delete(int? id)
+    {
+        if (id == null) return NotFound();
+    
+        var phone = _db.Phones.FirstOrDefault(p => p.Id == id);
+        if (phone == null) return NotFound();
+
+        return View(phone);
+    }
+
+    [HttpPost]
+    public IActionResult ConfirmDelete(int? id)
+    {
+        if (id != null)
+        {
+            var phone = _db.Phones.FirstOrDefault(p => p.Id == id);
+            if (phone != null)
+            {
+                _db.Phones.Remove(phone);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+        }
+        return NotFound();
+    }
 }

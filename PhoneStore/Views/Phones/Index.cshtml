@@ -29,14 +29,13 @@ else
                 <td>@phone.Price</td>
                 <td>
                     <a asp-action="DownloadFile" asp-controller="Phones" asp-route-phoneName="@phone.Name">Download Info</a>
-                </td>
-                <td>
+
                     <a asp-action="RedirectToManufacturer" asp-controller="Phones" asp-route-url="@phone.ManufacturerUrl">Visit Site</a>
-                </td>
-                <td>
+
                     <a asp-action="Edit" asp-controller="Phones" asp-route-id="@phone.Id">Edit</a>
-                </td>
-                <td>
+
+                    <a asp-action="Delete" asp-controller="Phones" asp-route-id="@phone.Id">Удалить</a>
+
                     <a asp-action="Create" asp-controller="Orders" asp-route-phoneId="@phone.Id">Order</a>
                 </td>
 

@@ -1,0 +1,12 @@
+﻿@model Phone
+@{
+    ViewBag.Title = "Confirmation";
+    Layout = "_Layout";
+}
+
+<h2>Confirm deletion</h2>
+<form method="post" asp-action="ConfirmDelete" asp-controller="Phones" asp-route-id="@Model.Id">
+    <p>Do you really want to delete @Model.Name ?</p>
+    <input type="submit" value="Yes"/>
+    <a asp-action="Index" asp-controller="Phones">No</a>
+</form>
