@@ -1,0 +1,16 @@
+﻿@model Phone
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "_Layout";
+}
+
+<h2>@Model.Name</h2>
+<p>Brand: @Model.Company</p>
+<p>Price (USD): $@Model.Price</p>
+<p>Description: @Model.Description</p>
+
+@if(!string.IsNullOrEmpty(Model.PhotoUrl))
+{
+    <img src="@Model.PhotoUrl" alt="@Model.Name" style="max-width:300px;" />
+}

@@ -7,5 +7,7 @@ public class Phone
     public string Company { get; set; }
     public int Price { get; set; }
     public string ManufacturerUrl { get; set; }
+    public string Description { get; set; }
+    public string PhotoUrl { get; set; }
 
 }

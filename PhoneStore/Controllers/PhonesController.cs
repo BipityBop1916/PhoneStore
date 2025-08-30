@@ -97,4 +97,14 @@ public class PhonesController : Controller
         }
         return NotFound();
     }
+    
+    public IActionResult Details(int? id)
+    {
+        if (id == null) return NotFound();
+
+        var phone = _db.Phones.FirstOrDefault(p => p.Id == id);
+        if (phone == null) return NotFound();
+
+        return View(phone);
+    }
 }
